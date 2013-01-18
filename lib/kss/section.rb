@@ -46,7 +46,8 @@ module Kss
     def description
       comment_sections.reject do |section|
         section == section_comment ||
-        section == modifiers_comment
+        section == modifiers_comment ||
+        section == example_comment
       end.join("\n\n")
     end
 
@@ -76,17 +77,30 @@ module Kss
       modifiers
     end
 
+    # Public: The example HTML section of a styleguide comment block.
+    #
+    # Returns a example HTML String
+    def example_html
+      example_comment
+    end
+
   private
-  
+
     def section_comment
       comment_sections.find do |text|
-        text =~ /Styleguide \d/i
+        text =~ /^\s*Styleguide \d/i
       end.to_s
     end
-  
+
     def modifiers_comment
-      comment_sections[1..-1].reject do |section|
-        section == section_comment
+      comment_sections.select do |text|
+        text =~ /^\s*[\.\:]/
+      end.last
+    end
+
+    def example_comment
+      comment_sections.select do |text|
+        text =~ /^\s*\</
       end.last
     end
   end

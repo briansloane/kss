@@ -16,6 +16,8 @@ A button suitable for giving stars to someone.
 .star-given - A highlight indicating you've already given a star.
 .disabled   - Dims the button to indicate it cannot be used.
 
+<button class="star $modifier-class">Star Button</button>
+
 Styleguide 2.2.1.
 */
 comment
@@ -26,6 +28,8 @@ comment
  * .star-given - A highlight indicating you've already given a star.
  * .disabled   - Dims the button to indicate it cannot be used.
  *
+ * <button class="star $modifier-class">Star Button</button>
+ *
  * Styleguide 2.2.1. */
 comment
 
@@ -34,6 +38,8 @@ comment
 //
 // .star-given - A highlight indicating you've already given a star.
 // .disabled   - Dims the button to indicate it cannot be used.
+//
+// <button class="star $modifier-class">Star Button</button>
 //
 // Styleguide 2.2.1.
 comment
@@ -45,6 +51,8 @@ comment
   .star-given - A highlight indicating you've already given a star.
   .disabled   - Dims the button to indicate it cannot be used.
 
+  <button class="star $modifier-class">Star Button</button>
+
   Styleguide 2.2.1.
   */
 comment
@@ -54,6 +62,8 @@ A button suitable for giving stars to someone.
 
 .star-given - A highlight indicating you've already given a star.
 .disabled   - Dims the button to indicate it cannot be used.
+
+<button class="star $modifier-class">Star Button</button>
 
 Styleguide 2.2.1.
 comment

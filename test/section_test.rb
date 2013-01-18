@@ -1,6 +1,6 @@
 require 'test/helper'
 
-class SectionTest < Kss::Test
+class SectionFullTest < Kss::Test
 
   def setup
     @comment_text = <<comment
@@ -12,6 +12,8 @@ Your standard form button.
 :disabled - Dims the button when disabled.
 .primary  - Indicates button is the primary action.
 .smaller  - A smaller button
+
+<button>Button</button>
 
 Styleguide 2.1.1.
 comment
@@ -33,6 +35,44 @@ comment
 
   test "parses a modifier's description" do
     assert_equal 'Highlights when hovering.', @section.modifiers.first.description
+  end
+
+  test "parses the example html" do
+    assert_equal '<button>Button</button>', @section.example_html
+  end
+
+  test "parses the styleguide reference" do
+    assert_equal '2.1.1', @section.section
+  end
+
+end
+
+class SectionNoModifiersTest < Kss::Test
+
+  def setup
+    @comment_text = <<comment
+# Form Button
+
+Your standard form button.
+
+<button>Button</button>
+
+Styleguide 2.1.1.
+comment
+
+    @section = Kss::Section.new(@comment_text, 'example.css')
+  end
+
+  test "parses the description" do
+    assert_equal "# Form Button\n\nYour standard form button.", @section.description
+  end
+
+  test "parses the modifiers" do
+    assert_equal 0, @section.modifiers.size
+  end
+
+  test "parses the example html" do
+    assert_equal '<button>Button</button>', @section.example_html
   end
 
   test "parses the styleguide reference" do

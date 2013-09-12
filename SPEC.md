@@ -27,6 +27,8 @@ A button suitable for giving stars to someone.
 .stars-given:hover - Subtle hover highlight on top of stars-given styling.
 .disabled          - Dims the button to indicate it cannot be used.
 
+<button class="stars-given">Example Button</button>
+
 Styleguide 2.1.3.
 */
 a.button.star{
@@ -50,6 +52,8 @@ When using a preprocessor that supports the functionality, use `//` to prefix yo
 // .stars-given:hover - Subtle hover highlight on top of stars-given styling.
 // .disabled          - Dims the button to indicate it cannot be used.
 //
+// <button class="stars-given">Example Button</button>
+//
 // Styleguide 2.1.3.
 a.button.star{
   ...
@@ -62,7 +66,7 @@ a.button.star{
 }
 ```
 
-Each KSS documentation block consists of three parts: a description of what the element does or looks like, a list of modifier classes or pseudo-classes and how they modify the element, and a reference to the element's position in the styleguide.
+Each KSS documentation block consists of four parts: a description of what the element does or looks like, a list of modifier classes or pseudo-classes and how they modify the element, a one line example html and a reference to the element's position in the styleguide.
 
 ### The description section
 
@@ -99,6 +103,18 @@ If the UI element you are documenting has multiple states or styles depending on
 // .stars-given       - A highlight indicating you've already given a star.
 // .stars-given:hover - Subtle hover highlight on top of stars-given styling.
 // .disabled          - Dims the button to indicate it cannot be used.
+```
+### The example html section
+
+The example html section is optional but makes documenting your styles much easier since it allows for the description, modifiers and examples to live in one place.
+
+Within the stylesheet the example html can be multiple lines and should be separated by a line break on either side.
+
+```scss
+//
+// <button class="stars-given">Example Button</button>
+// <button class="disabled">Disabled Button</button>
+//
 ```
 
 ### The styleguide section
